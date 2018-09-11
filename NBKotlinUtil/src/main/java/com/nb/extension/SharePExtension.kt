@@ -1,4 +1,4 @@
-package com.icoinbay.app.extension
+package com.nb.extension
 
 import com.blankj.utilcode.util.SPUtils
 import com.nb.nbContext

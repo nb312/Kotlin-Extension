@@ -1,4 +1,4 @@
-package com.busd.lightwallet.view
+package com.nb.view
 
 import android.app.Activity
 import android.view.View

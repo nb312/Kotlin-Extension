@@ -1,4 +1,4 @@
-package com.icoinbay.app.extension
+package com.nb.extension
 
 import android.content.Context
 import com.nb.base.NBaseEvent

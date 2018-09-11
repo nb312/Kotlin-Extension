@@ -1,10 +1,9 @@
-package com.icoinbay.app.extension
+package com.nb.adapter
 
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.nb.nbContext
-import com.nb.nbcomponentui.adapter.NBItemLine
 
 
 /**

@@ -1,4 +1,4 @@
-package com.icoinbay.app.extension
+package com.nb.extension
 
 /**
  * Created by NieBin on 2018-08-06

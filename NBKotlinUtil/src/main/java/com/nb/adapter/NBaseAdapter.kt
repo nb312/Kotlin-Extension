@@ -1,4 +1,4 @@
-package com.nb.nbcomponentui.adapter
+package com.nb.adapter
 
 import android.content.Context
 import android.databinding.DataBindingUtil

@@ -1,4 +1,4 @@
-package com.nb.nbcomponentui.adapter
+package com.nb.adapter
 
 import android.graphics.Canvas
 import android.graphics.Rect

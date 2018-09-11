@@ -1,18 +1,13 @@
-package com.nb.nbcomponentui.base
+package com.nb.base
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.icoinbay.app.extension.id2Color
-import com.nb.base.IHttpFunction
-import com.nb.base.IUiFunction
+import com.nb.extension.id2Color
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import java.io.Serializable
 
 
 /**

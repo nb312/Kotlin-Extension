@@ -1,4 +1,4 @@
-package com.icoinbay.app.extension
+package com.nb.extension
 
 import android.text.*
 import android.text.style.AbsoluteSizeSpan
