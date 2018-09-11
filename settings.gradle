@@ -1,1 +1,1 @@
-include ':app', ':nbExtension'
+include ':app', ':NBKotlinUtil'
