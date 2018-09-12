@@ -2,6 +2,7 @@ package com.nb.example
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.nb.extension.toast
 import com.nb.nbContext
 
 class MainActivity : AppCompatActivity() {
@@ -10,5 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         nbContext = this
+        "hello world".toast()
     }
 }

@@ -11,7 +11,7 @@ import com.nb.nbContext
 
 
 val Int.id2Color: Int
-    get() = nbContext.resources.getColor(this, nbContext.theme)
+    get() = nbContext.resources.getColor(this)
 
 val Int.id2String: String
     get() = nbContext.resources.getString(this).toString()
