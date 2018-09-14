@@ -9,8 +9,4 @@ import java.io.Serializable
  */
 open class NBaseEvent() : Serializable {
     var eventType: Int = 0
-
-    constructor(type: Int = 0) : this() {
-        this.eventType = type
-    }
 }
