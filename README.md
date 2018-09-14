@@ -1,6 +1,10 @@
-# KotlinCommonUtil
-This library is writed by Koltin.When I was developing,I have some code with easy using,I just put them here.
-Expecially, I think the extension of using within kotlin is very convinence.I use so many extension code in  this library.
+# Kotlin-Extension
+This library have the function below:
+- Id extension
+- SharePreference Extension
+- Intent with data Extension
+- TextView Extension
+- EventBus Extension
 # Id extension
 Normally,if you do not code in the activity or fragment,we may use the id like this.
 ```kotlin
