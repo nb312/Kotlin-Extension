@@ -103,7 +103,7 @@ Putting types:
 So easy!
 
 # Activity
-- No data 
+### No data 
 If you want start an activity,like `MainActivity` with no data,just below:
 ```kotlin
 activity.startAct(MainActivity::class.java)
@@ -117,7 +117,7 @@ if you call it in an Activity,codes are like this:
  startAct(MainActivity::class.java)
 ```
 It's cool.
-- With data
+### With data
 It support the three ways like above,just different with its data.Example is below:
 **put the data**
 ```kotlin
