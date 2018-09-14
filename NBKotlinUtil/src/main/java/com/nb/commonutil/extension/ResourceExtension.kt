@@ -15,11 +15,11 @@ val Int.id2Color: Int
     get() = NBCommonUtil.context.resources.getColor(this)
 
 val Int.id2String: String
-    get() = NBCommonUtil.context.resources.getString(this).toString()
+    get() = NBCommonUtil.context.resources.getString(this)
 
 
 val Int.id2TrimStr: String
-    get() = NBCommonUtil.context.resources.getString(this).toString().trim()
+    get() = NBCommonUtil.context.resources.getString(this).trim()
 
 val Int.id2StrList: MutableList<String>
     get() = NBCommonUtil.context.resources.getStringArray(this).toMutableList()
