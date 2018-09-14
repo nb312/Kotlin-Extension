@@ -1,11 +1,12 @@
 # Kotlin-Extension
-This library have the function below:
-- Id extension
-- SharePreference Extension
-- Intent with data Extension
-- TextView Extension
-- EventBus Extension
-# Id extension
+This library have the extensions are below:
+- Resource Id 
+- SharePreference 
+- Activity
+- EventBus 
+- TextView 
+
+# Resource Id
 Normally,if you do not code in the activity or fragment,we may use the id like this.
 ```kotlin
         var hello = context.resources.getString(R.string.hello)
@@ -43,7 +44,7 @@ And **copy** the string to the clipboard,so easy:
 ```
 Above,it is so cool to use the string extension,if you have some idea about these alike way, you can upload them on this project.
 
-# SharedPreferences Extension 
+# SharedPreferences 
 You can just use them with the key,value.Examples:
 ```kotlin
         var v = "your_key".getSPString() //get the value with the key 'your_key'
@@ -68,5 +69,114 @@ Putting types:
         "key5".putSPLong(2323L)
 ```
 So easy!
+
+# Activity
+- No data 
+If you want start an activity,like `MainActivity` with no data,just below:
+```kotlin
+activity.startAct(MainActivity::class.java)
+```
+Or 
+```kotlin
+context.startAct(MainActivity::class.java)
+```
+if you call it in an Activity,codes are like this: 
+```kotlin
+ startAct(MainActivity::class.java)
+```
+It's cool.
+- With data
+It support the three ways like above,just different with its data.Example is below:
+**put the data**
+```kotlin
+ var mainData = MainData("Hello world") //the MainData is defined by you,but make sure the MainData implement the Serializable interface.
+ startAct(MainActivity::class.java, mainData) 
+```
+Then **get the data** with `Intent` or `activity`,they are like these `intent.getCurrentData()` and `activity.getCurrentData()`,if call in an activity just call `getCurrentData()`.Example is below:
+```kotlin
+   var mainData: MainData = getCurrentData()
+```
+But you should be careful to make sure the 'activity' or 'intent' have the data,if not,there will be an error throwed.
+
+# EventBus
+**Register the EventBus**  
+When you want to register the EventBus to an object,you can just call it in its function,like below: 
+```kotlin 
+registerEventBus()
+```
+**Cancel the EventBus**:
+```kotlin
+unEventBus()
+```
+**Send Message**:
+1. define a data item for event
+```kotlin
+class MainEvent(var data: String = "") : NBaseEvent() {
+    init {
+        eventType = TYPE_INIT
+    }
+
+    companion object {
+        /**initialize the main activity*/
+        const val TYPE_INIT = 0x101
+        /**refresh the data*/
+        const val TYPE_REFRESH = 0x102
+        /**finish the activity*/
+        const val TYPE_FINISH = 0x103
+    }
+}
+```
+You must extend the class `NBaseEvent`,the part of the `  companion object`  or the `data` variable is not necessary,if you have only one feature.Just like this `class MainEvent:NBaseEvent()`,then you can send it.  
+2. send 
+```
+var mainEvent = MainEvent("say hello world")
+mainEvent.sendEBusMessage()
+```
+**Receive message**
+1. define a interface   
+This interface can use in many place,if you want to accept the `MainEvent` with different types:
+```kotlin
+interface IMainEvent {
+    fun onMainEvent(event: MainEvent)
+}
+```
+2. implement
+```kotlin
+ @Subscribe(threadMode = ThreadMode.MAIN)
+    override fun onMainEvent(event: MainEvent) {
+        when (event.eventType) {
+            MainEvent.TYPE_INIT -> "init activity".print()
+            MainEvent.TYPE_REFRESH -> "refresh data".print()
+            MainEvent.TYPE_FINISH -> "finish MainActivity".print()
+        }
+    }
+```
+
+# TextView 
+Get the string
+```kotlin
+var content=textView.trimStr
+```
+Change the state from to text to password type:
+```
+textView.change2Pwd(true)
+```
+only see the afterChanged function: 
+```kotlin
+textView.afterChange {
+            "only see the afterTextChanged function".print()
+        }
+```
+See all with one function:
+```koltin
+textView.afterChange {
+            "only see the afterTextChanged function".print()
+        }
+```
+Check some text view have empty content:
+```kotlin
+var isE=  mutableListOf(textView1, textView2).hasOneEmpty() //true means there is at least one textview has empty content.
+```
+
 
 
