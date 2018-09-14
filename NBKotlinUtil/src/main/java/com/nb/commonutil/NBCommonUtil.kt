@@ -1,4 +1,4 @@
-package com.nb
+package com.nb.commonutil
 
 import android.content.Context
 
@@ -8,8 +8,10 @@ import android.content.Context
  * Email: niebin312@gmail.com
  */
 
-lateinit var nbContext: Context
 
-object NBUtil {
+class NBCommonUtil {
+    companion object {
+        lateinit var context: Context
+    }
 
 }

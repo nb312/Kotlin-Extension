@@ -1,9 +1,8 @@
-package com.nb.extension
+package com.nb.commonutil.extension
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.Fragment
 import java.io.Serializable
 
 /**
@@ -27,10 +26,6 @@ fun <D : Serializable> Activity.putCurrentData(d: D) {
     this.intent.putExtra(KEY_DATA_INTENT, d)
 }
 
-fun <D : Serializable> Fragment.putCurrentData(d: D) {
-    this.activity?.intent?.putExtra(KEY_DATA_INTENT, d)
-}
-
 /**
  * this is can be obtain the data from current intent that jump from the other activity.
  * */
@@ -42,9 +37,6 @@ fun <D : Serializable> Activity.getCurrentData(): D {
     return this.intent.getSerializableExtra(KEY_DATA_INTENT) as D
 }
 
-fun <D : Serializable> Fragment.getCurrentData(): D {
-    return this.activity?.intent?.getSerializableExtra(KEY_DATA_INTENT) as D
-}
 
 /**jump activity but no data.*/
 fun <T> Activity.startAct(act: Class<T>) {
@@ -77,24 +69,6 @@ fun <T> Context.startAct(act: Class<T>) {
  */
 fun <T, D : Serializable> Context.startAct(act: Class<T>, d: D) {
     var intent = Intent(this, act)
-    intent.putCurrentData(d)
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    startActivity(intent)
-}
-
-/**jump activity but no data.*/
-fun <T> Fragment.startAct(act: Class<T>) {
-    var intent = Intent(this.activity, act)
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    startActivity(intent)
-}
-
-/**
- * if you want to put some data in the intent,you should be taking the data serializable.
- *
- */
-fun <T, D : Serializable> Fragment.startAct(act: Class<T>, d: D) {
-    var intent = Intent(this.activity, act)
     intent.putCurrentData(d)
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     startActivity(intent)

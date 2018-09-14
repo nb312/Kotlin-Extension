@@ -1,4 +1,4 @@
-package com.nb.base
+package com.nb.commonutil.base
 
 import java.io.Serializable
 
