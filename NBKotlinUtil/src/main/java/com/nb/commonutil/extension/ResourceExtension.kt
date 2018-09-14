@@ -37,11 +37,11 @@ fun Int.id2Toast() {
 
 /** print tag: content*/
 fun String.print(content: String) {
-    print("$this: $content")
+    println("$this: $content")
 }
 
-fun Any.print(content: String) {
-    println("${javaClass.simpleName}:$content")
+fun Any.objectPrint(content: String) {
+    println("${javaClass.simpleName}: $content")
 }
 
 fun String.print() {

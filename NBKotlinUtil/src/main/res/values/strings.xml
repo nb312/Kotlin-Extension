@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NBKotlinUtil</string>
+    <string name="hello">hello world</string>
+    <string-array name="fruit">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Orange</item>
+    </string-array>
 </resources>
