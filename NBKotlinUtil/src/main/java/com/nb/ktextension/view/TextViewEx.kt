@@ -1,4 +1,4 @@
-package com.nb.commonutil.extension
+package com.nb.ktextension.view
 
 import android.text.*
 import android.text.style.AbsoluteSizeSpan

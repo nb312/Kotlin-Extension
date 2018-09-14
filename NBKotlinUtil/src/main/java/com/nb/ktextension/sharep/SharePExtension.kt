@@ -1,7 +1,7 @@
-package com.nb.commonutil.extension
+package com.nb.ktextension.sharep
 
 import android.content.SharedPreferences
-import com.nb.commonutil.NBCommonUtil
+import com.nb.ktextension.NBCommonUtil
 
 /**
  * Created by NieBin on 18-8-17

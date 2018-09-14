@@ -1,8 +1,7 @@
-package com.nb.commonutil.extension
+package com.nb.ktextension.resource
 
-import android.util.Log
 import android.widget.Toast
-import com.nb.commonutil.NBCommonUtil
+import com.nb.ktextension.NBCommonUtil
 
 /**
  * Created by NieBin on 2018-07-30

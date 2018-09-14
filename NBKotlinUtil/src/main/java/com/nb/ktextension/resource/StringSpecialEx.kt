@@ -1,9 +1,7 @@
-package com.nb.commonutil.extension
+package com.nb.ktextension.resource
 
 import android.content.Context
-import com.nb.commonutil.NBCommonUtil
-import com.nb.commonutil.base.NBaseEvent
-import org.greenrobot.eventbus.EventBus
+import com.nb.ktextension.NBCommonUtil
 
 
 /**
@@ -11,25 +9,7 @@ import org.greenrobot.eventbus.EventBus
  * Github: https://github.com/nb312
  * Email: niebin312@gmail.com
  */
-/**注册event bus*/
-fun Any?.registerEventBus() {
-    if (!EventBus.getDefault().isRegistered(this)) {
-        EventBus.getDefault().register(this)
-    }
-}
 
-/**注销event bus*/
-
-fun Any?.unEventBus() {
-    if (EventBus.getDefault().isRegistered(this)) {
-        EventBus.getDefault().unregister(this)
-    }
-}
-
-/**利用event bus 发送消息*/
-fun NBaseEvent?.sendEBusMessage() {
-    EventBus.getDefault().post(this)
-}
 
 /**将内容粘帖到粘帖板*/
 fun String.copy2Board() {

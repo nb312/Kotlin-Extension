@@ -1,4 +1,4 @@
-package com.nb.commonutil.base
+package com.nb.ktextension.event
 
 import java.io.Serializable
 

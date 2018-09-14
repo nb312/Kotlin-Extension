@@ -3,7 +3,8 @@ package com.nb.example
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.nb.commonutil.extension.*
+import com.nb.ktextension.resource.*
+import com.nb.ktextension.sharep.*
 
 class MainActivity : AppCompatActivity() {
 

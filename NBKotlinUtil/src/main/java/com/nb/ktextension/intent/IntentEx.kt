@@ -1,8 +1,9 @@
-package com.nb.commonutil.extension
+package com.nb.ktextension.intent
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import java.io.Serializable
 
 /**
@@ -71,6 +72,12 @@ fun <T, D : Serializable> Context.startAct(act: Class<T>, d: D) {
     var intent = Intent(this, act)
     intent.putCurrentData(d)
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    startActivity(intent)
+}
+
+fun Context.link2GooglePlay(app_id: String) {
+    val intent = Intent(Intent.ACTION_VIEW)
+    intent.data = Uri.parse("market://details?id=$app_id")
     startActivity(intent)
 }
 
