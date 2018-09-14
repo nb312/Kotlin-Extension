@@ -1,7 +1,7 @@
 package com.nb.ktextension.sharep
 
 import android.content.SharedPreferences
-import com.nb.ktextension.NBCommonUtil
+import com.nb.ktextension.NBExtensionUtil
 
 /**
  * Created by NieBin on 18-8-17
@@ -11,7 +11,7 @@ import com.nb.ktextension.NBCommonUtil
  */
 
 private val SP: SharedPreferences
-    get() = NBCommonUtil.context.getSharedPreferences(NBCommonUtil.context.packageName, 0)
+    get() = NBExtensionUtil.context.getSharedPreferences(NBExtensionUtil.context.packageName, 0)
 
 private val editor: SharedPreferences.Editor
     get() = SP.edit()

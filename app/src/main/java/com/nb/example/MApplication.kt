@@ -1,7 +1,7 @@
 package com.nb.example
 
 import android.app.Application
-import com.nb.ktextension.NBCommonUtil
+import com.nb.ktextension.NBExtensionUtil
 
 /**
  * Created by NieBin on 18-9-14
@@ -11,6 +11,6 @@ import com.nb.ktextension.NBCommonUtil
 class MApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        NBCommonUtil.context = this
+        NBExtensionUtil.context = this
     }
 }

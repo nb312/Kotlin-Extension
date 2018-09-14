@@ -1,7 +1,7 @@
 package com.nb.ktextension.resource
 
 import android.content.Context
-import com.nb.ktextension.NBCommonUtil
+import com.nb.ktextension.NBExtensionUtil
 
 
 /**
@@ -14,10 +14,10 @@ import com.nb.ktextension.NBCommonUtil
 /**将内容粘帖到粘帖板*/
 fun String.copy2Board() {
     if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
-        val clipboard = NBCommonUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.text.ClipboardManager?
+        val clipboard = NBExtensionUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.text.ClipboardManager?
         clipboard!!.text = this
     } else {
-        val clipboard = NBCommonUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager?
+        val clipboard = NBExtensionUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager?
         val clip = android.content.ClipData.newPlainText("Copied Text", this)
         clipboard!!.primaryClip = clip
     }
@@ -28,10 +28,10 @@ fun String.copy2Board() {
  * */
 fun getClipString(): String {
     return if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
-        val clipboard = NBCommonUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.text.ClipboardManager?
+        val clipboard = NBExtensionUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.text.ClipboardManager?
         clipboard?.text.toString()
     } else {
-        val clipboard = NBCommonUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager?
+        val clipboard = NBExtensionUtil.context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager?
         clipboard?.primaryClip?.getItemAt(0)?.text.toString()
     }
 }

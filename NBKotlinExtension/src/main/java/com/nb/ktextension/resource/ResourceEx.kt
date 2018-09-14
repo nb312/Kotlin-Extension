@@ -1,7 +1,7 @@
 package com.nb.ktextension.resource
 
 import android.widget.Toast
-import com.nb.ktextension.NBCommonUtil
+import com.nb.ktextension.NBExtensionUtil
 
 /**
  * Created by NieBin on 2018-07-30
@@ -11,27 +11,27 @@ import com.nb.ktextension.NBCommonUtil
 
 
 val Int.id2Color: Int
-    get() = NBCommonUtil.context.resources.getColor(this)
+    get() = NBExtensionUtil.context.resources.getColor(this)
 
 val Int.id2String: String
-    get() = NBCommonUtil.context.resources.getString(this)
+    get() = NBExtensionUtil.context.resources.getString(this)
 
 
 val Int.id2TrimStr: String
-    get() = NBCommonUtil.context.resources.getString(this).trim()
+    get() = NBExtensionUtil.context.resources.getString(this).trim()
 
 val Int.id2StrList: MutableList<String>
-    get() = NBCommonUtil.context.resources.getStringArray(this).toMutableList()
+    get() = NBExtensionUtil.context.resources.getStringArray(this).toMutableList()
 
 val Int.id2StrArray: Array<String>
-    get() = NBCommonUtil.context.resources.getStringArray(this)
+    get() = NBExtensionUtil.context.resources.getStringArray(this)
 
 fun String.toast() {
-    Toast.makeText(NBCommonUtil.context, this, Toast.LENGTH_SHORT).show()
+    Toast.makeText(NBExtensionUtil.context, this, Toast.LENGTH_SHORT).show()
 }
 
 fun Int.id2Toast() {
-    Toast.makeText(NBCommonUtil.context, NBCommonUtil.context.getString(this), Toast.LENGTH_SHORT).show()
+    Toast.makeText(NBExtensionUtil.context, NBExtensionUtil.context.getString(this), Toast.LENGTH_SHORT).show()
 }
 
 /** print tag: content*/
