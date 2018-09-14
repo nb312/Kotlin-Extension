@@ -14,7 +14,7 @@ Normally,if you do not code in the activity or fragment,we may use the id like t
         print("Hello world")
         print(context.resources.getString(R.string.hello))
 ```
-But,with this library,you can use like beneath.
+But,with this library,you can use them like beneath.
 ```kotlin
         var hello = R.string.hello.id2String //obtain the 'Hello world'
         var green = R.color.green.id2Color // 'obtain the color green of your define'
@@ -38,5 +38,31 @@ And **copy** the string to the clipboard,so easy:
 "Hello world".copy2Board() 
 ```
 Above,it is so cool to use the string extension,if you have some idea about these alike way, you can upload them on this project.
+
+# SharedPreferences Extension 
+You can just use them with the key,value.Examples:
+```kotlin
+        var v = "your_key".getSPString() //get the value with the key 'your_key'
+        v.print() // you can use "your_key1".getSPString("--").print(),but someone maybe confuse with it.
+        "your_key".putSPString("Hello world") //set the value of the key 'your_key' to Hello world.
+        "your_key".getSPString("--").print() //get the value and print,the default value is '--',you could not must put it at all.
+```
+Support the getting types are below: 
+```kotlin
+        "key1".getSPString()
+        "key2".getSPBoolean()
+        "key3".getSPFloat()
+        "key4".getSPInt()
+        "key5".getSPLong()
+```
+Putting types: 
+```kotlin
+        "key1".putSPString("Hello")
+        "key2".putSPBoolean(false)
+        "key3".putSPFloat(1.2f)
+        "key4".putSPInt(12)
+        "key5".putSPLong(2323L)
+```
+So easy!
 
 
