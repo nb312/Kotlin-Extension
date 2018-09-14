@@ -6,6 +6,37 @@ This library have the extensions are below:
 - EventBus 
 - TextView 
 
+# Start
+
+### 1. Add an URL of the repository 
+In the build.gradle of the project root. Add code as following:
+```gradle
+allprojects {
+    repositories {
+        //others 
+        maven {
+            url "https://jitpack.io"
+        }
+       
+    }
+}
+```
+### 2. dependencies
+In the `build.gradle` of the using module.
+```kotlin
+dependencies {
+//others
+     implementation 'com.github.nb312:Kotlin-Extension:0.0.5'
+}
+```
+### 3. init 
+You must init the param in your application: 
+```kotlin
+  NBExtensionUtil.context = this
+```
+Then you can use them happy.
+
+
 # Resource Id
 Normally,if you do not code in the activity or fragment,we may use the id like this.
 ```kotlin
