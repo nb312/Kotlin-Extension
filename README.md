@@ -1,6 +1,6 @@
 # Kotlin-Extension
 [![ex][exsvg]][ex]    
-This library have the extensions are below:
+This library support these extensions, which are below:
 - Resource Id 
 - SharePreference 
 - Activity
