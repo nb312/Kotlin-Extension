@@ -1,5 +1,6 @@
 # Kotlin-Extension
-This library have the extensions are below:
+[![ex][exsvg]][ex]    
+This library support these extensions, which are below:
 - Resource Id 
 - SharePreference 
 - Activity
@@ -26,7 +27,7 @@ In the `build.gradle` of the using module.
 ```kotlin
 dependencies {
 //others
-     implementation 'com.github.nb312:Kotlin-Extension:0.0.5'
+     implementation 'com.github.nb312:Kotlin-Extension:0.0.6'
 }
 ```
 ### 3. init 
@@ -102,7 +103,7 @@ Putting types:
 So easy!
 
 # Activity
-- No data 
+### No data 
 If you want start an activity,like `MainActivity` with no data,just below:
 ```kotlin
 activity.startAct(MainActivity::class.java)
@@ -116,7 +117,7 @@ if you call it in an Activity,codes are like this:
  startAct(MainActivity::class.java)
 ```
 It's cool.
-- With data
+### With data
 It support the three ways like above,just different with its data.Example is below:
 **put the data**
 ```kotlin
@@ -211,3 +212,5 @@ var isE=  mutableListOf(textView1, textView2).hasOneEmpty() //true means there i
 
 
 
+[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.6-brightgreen.svg
+[ex]:https://github.com/nb312/Kotlin-Extension
