@@ -1,8 +1,11 @@
 package com.nb.ktextension.view
 
+import android.graphics.Paint
+import android.graphics.Typeface
 import android.text.*
 import android.text.style.AbsoluteSizeSpan
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.View
 import android.widget.TextView
 
@@ -84,10 +87,14 @@ fun TextView?.changeWithOne(change: () -> Unit) {
 fun TextView.setTextSizeColors(content: String,
                                specialColor: Int,
                                specialPos: MutableList<Int>,
-                               specialSize: Int = 34) {
+                               specialSize: Int = 34,
+                               isBold: Boolean = false) {
     val style = SpannableStringBuilder(content)
     style.setSpan(AbsoluteSizeSpan(specialSize), specialPos[0], specialPos[1], Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
     style.setSpan(ForegroundColorSpan(specialColor), specialPos[0], specialPos[1], Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    if (isBold) {
+        style.setSpan(StyleSpan(Typeface.BOLD), specialPos[0], specialPos[1], Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
     text = style
 }
 
@@ -98,5 +105,10 @@ fun <TV : TextView> MutableList<TV>.changeWithOne(change: () -> Unit) {
     }
 }
 
+/**设置下划线*/
+fun TextView.underLine() {
+    paint.flags = Paint.UNDERLINE_TEXT_FLAG//下划线
+    paint.isAntiAlias = true//抗锯齿
+}
 
 
