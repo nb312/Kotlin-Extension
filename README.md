@@ -1,11 +1,13 @@
 # Kotlin-Extension
 [![ex][exsvg]][ex]    
 This library support these extensions, which are below:
-- Resource Id 
-- SharePreference 
+- Resource Id
+- SharePreference
 - Activity
-- EventBus 
-- TextView 
+- EventBus
+- TextView
+- IO & File
+- Encryption
 
 # Start
 
@@ -212,5 +214,5 @@ var isE=  mutableListOf(textView1, textView2).hasOneEmpty() //true means there i
 
 
 
-[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.6-brightgreen.svg
+[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.7-brightgreen.svg
 [ex]:https://github.com/nb312/Kotlin-Extension
