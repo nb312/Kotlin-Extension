@@ -1,7 +1,7 @@
 # Kotlin-Extension
 [![ex][exsvg]][ex]    
 This library support these extensions, which are below:
-- Resource Id
+- (Resource Id)[doc/ResourceId.md]
 - SharePreference
 - Activity
 - EventBus
