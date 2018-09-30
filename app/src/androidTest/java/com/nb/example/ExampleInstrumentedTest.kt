@@ -2,6 +2,9 @@ package com.nb.example
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import com.nb.ktextension.encrypto.decodeRSA
+import com.nb.ktextension.encrypto.encodeRSA
+import com.nb.ktextension.encrypto.genPriPubKeyHex
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,5 +23,15 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("com.nb.example", appContext.packageName)
+        encryptionAes()
+
+    }
+
+    fun encryptionAes() {
+        val (priHex, pubHex) = 2048.genPriPubKeyHex
+        println("pr")
+        val encode = "Hello ---1".encodeRSA(pubHex)
+        val content = encode.decodeRSA(priHex)
+        println("content:$content")
     }
 }

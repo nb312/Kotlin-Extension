@@ -4,6 +4,7 @@ import java.security.*
 import java.security.spec.PKCS8EncodedKeySpec
 import java.security.spec.X509EncodedKeySpec
 import javax.crypto.Cipher
+import kotlin.math.absoluteValue
 
 /**
  * Created by NieBin on 18-9-30
@@ -39,7 +40,7 @@ fun String.encodeRSA(pubKeyBytes: ByteArray): ByteArray {
  * @param pubKeyHex the hex of  public_key
  * */
 fun ByteArray.encodeRSA(pubKeyHex: String): ByteArray {
-    return encodeRSA(pubKeyHex.toByteArray16())
+    return encodeRSA(pubKeyHex.hex2Array())
 }
 
 /**
@@ -47,7 +48,7 @@ fun ByteArray.encodeRSA(pubKeyHex: String): ByteArray {
  * @param pubKeyHex  hex of public_key
  * */
 fun String.encodeRSA(pubKeyHex: String): ByteArray {
-    return encodeRSA(pubKeyHex.toByteArray16())
+    return encodeRSA(pubKeyHex.hex2Array())
 }
 
 /**
@@ -66,7 +67,7 @@ fun ByteArray.decodeRSA(priKeyBytes: ByteArray): String {
  * @param priKeyBytes 私钥
  * */
 fun String.decodeRSA(priKeyBytes: ByteArray): String {
-    return this.toByteArray16().decodeRSA(priKeyBytes)
+    return this.hex2Array().decodeRSA(priKeyBytes)
 }
 
 /**
@@ -74,7 +75,7 @@ fun String.decodeRSA(priKeyBytes: ByteArray): String {
  * @param priKeyHex 私钥
  * */
 fun ByteArray.decodeRSA(priKeyHex: String): String {
-    return decodeRSA(priKeyHex.toByteArray16())
+    return decodeRSA(priKeyHex.hex2Array())
 }
 
 /**
@@ -82,7 +83,7 @@ fun ByteArray.decodeRSA(priKeyHex: String): String {
  * @param priKeyHex 私钥 the hex of private key.
  * */
 fun String.decodeRSA(priKeyHex: String): String {
-    return decodeRSA(priKeyHex.toByteArray16())
+    return decodeRSA(priKeyHex.hex2Array())
 }
 
 /**
@@ -105,18 +106,18 @@ val ByteArray.rsaPubKey: PublicKey
  * 获取 rsa的private key.
  * */
 val String.rsaPriKey: PrivateKey
-    get() = toByteArray16().rsaPriKey
+    get() = hex2Array().rsaPriKey
 /**
  * 获取 rsa的public key.
  * */
 val String.rsaPubKey: PublicKey
-    get() = toByteArray16().rsaPubKey
+    get() = hex2Array().rsaPubKey
 
 /**generate the key pair for rsa*/
 val Int.genKeyPair: KeyPair
     get() {
         val generator = KeyPairGenerator.getInstance(RSA)
-        generator.initialize(this, SecureRandom())
+        generator.initialize(this.absoluteValue, SecureRandom())
         return generator.generateKeyPair()
     }
 /**generate the private,public key for rsa */
@@ -130,5 +131,5 @@ val Int.genPriPubKeyBytes: Pair<ByteArray, ByteArray>
 val Int.genPriPubKeyHex: Pair<String, String>
     get() {
         val (pri, pub) = genPriPubKeyBytes
-        return Pair(pri.toString(Charsets.UTF_8), pub.toString(Charsets.UTF_8))
+        return Pair(pri.array2Hex(), pub.array2Hex())
     }

@@ -77,7 +77,7 @@ fun String.encodeAes(keyBytes: ByteArray, ivParamBytes: ByteArray): ByteArray {
  * @param ivHex iv 的16进制数
  * */
 fun ByteArray.encodeAes(keyHex: String, ivHex: String): ByteArray {
-    return encodeAes(keyHex.toByteArray16(), ivHex.toByteArray16())
+    return encodeAes(keyHex.hex2Array(), ivHex.hex2Array())
 }
 
 /**
@@ -86,7 +86,7 @@ fun ByteArray.encodeAes(keyHex: String, ivHex: String): ByteArray {
  * @param ivHex iv 的16进制数
  * */
 fun String.encodeAes(keyHex: String, ivHex: String): ByteArray {
-    return encodeAes(keyHex.toByteArray16(), ivHex.toByteArray16())
+    return encodeAes(keyHex.hex2Array(), ivHex.hex2Array())
 }
 
 /**使用 以下数据进行
@@ -119,7 +119,7 @@ fun ByteArray.decodeAes(keyBytes: ByteArray, ivParamBytes: ByteArray): String {
  * @param ivParamBytes IvParameterSpec 的byte array.
  * */
 fun String.decodeAes(keyBytes: ByteArray, ivParamBytes: ByteArray): String {
-    return this.toByteArray16().decodeAes(keyBytes, ivParamBytes)
+    return this.hex2Array().decodeAes(keyBytes, ivParamBytes)
 }
 
 /**密文根据AES 算法进行解密
@@ -127,7 +127,7 @@ fun String.decodeAes(keyBytes: ByteArray, ivParamBytes: ByteArray): String {
  * @param ivHex IvParameterSpec 的hex.
  * */
 fun ByteArray.decodeAes(keyHex: String, ivHex: String): String {
-    return decodeAes(keyHex.toByteArray16(), ivHex.toByteArray16())
+    return decodeAes(keyHex.hex2Array(), ivHex.hex2Array())
 }
 
 /**
@@ -136,7 +136,7 @@ fun ByteArray.decodeAes(keyHex: String, ivHex: String): String {
  * @param ivHex IvParameterSpec 的hex.
  * */
 fun String.decodeAes(keyHex: String, ivHex: String): String {
-    return decodeAes(keyHex.toByteArray16(), ivHex.toByteArray16())
+    return decodeAes(keyHex.hex2Array(), ivHex.hex2Array())
 }
 
 
