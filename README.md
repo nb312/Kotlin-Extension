@@ -63,5 +63,5 @@ Then you can use them happy.
 
 
 
-[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.7-brightgreen.svg
+[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.8-brightgreen.svg
 [ex]:https://github.com/nb312/Kotlin-Extension
