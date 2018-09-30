@@ -48,7 +48,7 @@ In the `build.gradle` of the using module.
 ```kotlin
 dependencies {
 //others
-     implementation 'com.github.nb312:Kotlin-Extension:0.0.6'
+     implementation 'com.github.nb312:Kotlin-Extension:0.0.8'
 }
 ```
 ### 3. init 
