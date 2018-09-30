@@ -6,8 +6,8 @@ This library support these extensions, which are below:
 - [Activity](https://github.com/nb312/Kotlin-Extension/blob/master/doc/Activity.md)
 - [EventBus](https://github.com/nb312/Kotlin-Extension/blob/master/doc/EventBus.md)
 - [TextView](https://github.com/nb312/Kotlin-Extension/blob/master/doc/TextView.md)
-- IO & File
-- Encryption  
+- [IO & File](https://github.com/nb312/Kotlin-Extension/blob/master/doc/IOFIle.md)
+- [AES && RSA Encryption](https://github.com/nb312/Kotlin-Extension/blob/master/doc/Encryption.md)  
 
 # SharedPreferences Example 
 The Extension is convenient to use ,we just look at how to  call the SharePreference example,for the other examples ,you can click the link above to look their detail information. 
