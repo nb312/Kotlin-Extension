@@ -1,9 +1,6 @@
 package com.nb.ktextension.encrypto
 
-import java.security.KeyFactory
-import java.security.PrivateKey
-import java.security.PublicKey
-import java.security.SecureRandom
+import java.security.*
 import java.security.spec.PKCS8EncodedKeySpec
 import java.security.spec.X509EncodedKeySpec
 import javax.crypto.Cipher
@@ -114,3 +111,24 @@ val String.rsaPriKey: PrivateKey
  * */
 val String.rsaPubKey: PublicKey
     get() = toByteArray16().rsaPubKey
+
+/**generate the key pair for rsa*/
+val Int.genKeyPair: KeyPair
+    get() {
+        val generator = KeyPairGenerator.getInstance(RSA)
+        generator.initialize(this, SecureRandom())
+        return generator.generateKeyPair()
+    }
+/**generate the private,public key for rsa */
+val Int.genPriPubKeyBytes: Pair<ByteArray, ByteArray>
+    get() {
+        val key = genKeyPair
+        return Pair(key.private.encoded, key.public.encoded)
+
+    }
+/**generate the private,public key for ras,the format is string.*/
+val Int.genPriPubKeyHex: Pair<String, String>
+    get() {
+        val (pri, pub) = genPriPubKeyBytes
+        return Pair(pri.toString(Charsets.UTF_8), pub.toString(Charsets.UTF_8))
+    }
