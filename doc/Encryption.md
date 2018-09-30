@@ -32,6 +32,7 @@ val encode = "Hello World for all of you".encodeAes(key, iv)
 val content = encode.decodeAes(key, iv) // the hex of encode is 'be53a1e99e14c1ccafa38fa77d8513c47e192e9ee6f086dca399'
 println("content: $content") // print 'content: Hello World for all of you'
 ```
+The ciphertext is _be53a1e99e14c1ccafa38fa77d8513c47e192e9ee6f086dca399_
 - ### decode with byte array
 Above,we already use the decode function to decode the content,
 ```kotlin
