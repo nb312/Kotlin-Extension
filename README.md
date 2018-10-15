@@ -48,7 +48,7 @@ In the `build.gradle` of the using module.
 ```kotlin
 dependencies {
 //others
-     implementation 'com.github.nb312:Kotlin-Extension:0.0.8'
+     implementation 'com.github.nb312:Kotlin-Extension:0.0.9'
 }
 ```
 ### 3. init 
@@ -63,5 +63,5 @@ Then you can use them happy.
 
 
 
-[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.8-brightgreen.svg
+[exsvg]:https://img.shields.io/badge/Kotlin--Extension-0.0.9-brightgreen.svg
 [ex]:https://github.com/nb312/Kotlin-Extension
