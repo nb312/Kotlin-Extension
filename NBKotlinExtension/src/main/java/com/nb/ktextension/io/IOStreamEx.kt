@@ -43,9 +43,9 @@ val InputStream.content2String: String
 /**inputStream 转换为 byteArray*/
 val InputStream.content2ByteArray: ByteArray
     get() {
-        var bufferStream = BufferedInputStream(this) //处理流，缓冲流
-        var byteList = mutableListOf<Byte>()
-        var bufBytes = ByteArray(BYTE_SIZE)
+        val bufferStream = BufferedInputStream(this) //处理流，缓冲流
+        val byteList = mutableListOf<Byte>()
+        val bufBytes = ByteArray(BYTE_SIZE)
         var doneIndex = bufferStream.read(bufBytes, 0, BYTE_SIZE)
         if (doneIndex != -1) {
             byteList.addAll(bufBytes.toMutableList().subList(0, doneIndex))
