@@ -27,8 +27,8 @@ fun OutputStream.write2Bytes(bytes: ByteArray) {
     var len = bytes.size // 数组的长度
     while (len > 0) {
         var off = loc * size
-        var minNum = min(size, len - off)
-        var copy = bytes.copyOfRange(loc * size, loc * size + minNum)
+        var minNum = min(size, len)
+        var copy = bytes.copyOfRange(off, off + minNum)
         bufStream.write(copy)
         len -= minNum
         loc++
